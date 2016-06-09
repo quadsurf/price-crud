@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Index</title>
+</head>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<body>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% if (puppies) { %>
+                <% puppies.forEach(function(data) { %>
+                    <tr>
+                        <td>
+                            <%= data.name %>
+                        </td>
+                        <td>
+                            <%= data.age  %>
+                        </td>
+
+                        <td>
+                         <a href="/<%= data.id %>/edit">Edit</a>
+                        </td>
+                        <td>
+                          <a href="/<%= data.id %>/delete">DEATH FOR THE LULZ</a>
+                        </td>
+
+                    </tr>
+                    <% }) } %>
+                    <tr>
+                      <td><button class="btn-success"><a href="/new">New Pup</a></button></td>
+                    </tr>
+        </tbody>
+    </table>
+
+</body>
+
+</html>
